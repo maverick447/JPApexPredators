@@ -24,9 +24,6 @@ struct ContentView: View {
         NavigationStack {
             List(filteredDinos) { predator in
                 NavigationLink {
-//                    Image(predator.image)
-//                        .resizable()
-//                        .scaledToFit()
                     PredatorDetail(predator: predator, position: .camera(
                         MapCamera(centerCoordinate: predator.location,
                                   distance: /* from 30000 feet above the location*/ 30000)))
@@ -74,12 +71,7 @@ struct ContentView: View {
                         // ternary operator
                         Image(systemName: alphabetical ? "film" : "textformat")
                             .symbolEffect(.bounce, value: alphabetical)
-//                        if alphabetical {
-//                            Image(systemName: "film")
-//                        } else {
-//                            Image(systemName: "textformat")
-//                        }
-                    }                   
+                    }
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -99,7 +91,6 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(.dark)
-        
     }
 }
 
